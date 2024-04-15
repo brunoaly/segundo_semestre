@@ -1,0 +1,22 @@
+<script>
+
+//Quem estiver acompanhado pela palavra 'this' ele é um atributo.
+
+    class Pessoa {
+        constructor(nome, idade) {
+            this.nome = nome
+            this.idade = idade
+        }
+        
+        Saudar() {
+            return 'olá ' + this.nome        
+        }
+        
+    }
+
+    let p = new Pessoa("selmini", 47)
+
+    console.log(p)
+    console.log(p.Saudar())
+    
+</script>

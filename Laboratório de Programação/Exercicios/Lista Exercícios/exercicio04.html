@@ -1,0 +1,23 @@
+<meta charset="utf-8">
+<script>
+    let n = Number(prompt("Digite o valor de n:"))
+    let soma = calcularSomaFibonacci(n)
+    document.write("<h2>soma = " + soma + "</h2>")
+
+    function calcularSomaFibonacci(n) {
+        let soma = 0
+        let anterior = 0
+        let atual = 1
+
+        for (let i = 1; i <= n; i++) {
+            soma += atual
+            let proximo = anterior + atual
+            anterior = atual
+            atual = proximo
+        }
+
+        return soma
+    }
+
+
+</script>

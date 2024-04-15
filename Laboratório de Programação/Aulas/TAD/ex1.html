@@ -1,0 +1,44 @@
+<meta charset="utf-8">
+<script>
+
+    class Produto {
+        baixaSem = new Array(4)
+        constructor(codigo, nome, preco, baixaSem) {
+            this.nome = nome
+            this.codigo = codigo
+            this.preco = preco
+        }
+    }
+
+    let produto = new Array(3)
+    let nome, preco
+
+    for (let i = 0; i < produto.length; i++) {
+        codigo = Math.floor(Math.random() * 9000) + 1000
+        nome = prompt('Insira o nome do produto: ')
+        preco = Number(prompt('Insira o preço do produto: '))
+        let p = new Produto(codigo, nome, preco)
+
+        for (let j = 0; j < p.length; j++) {
+            p.baixaSem[j] = Math.floor(Math.random() * 100)
+        }
+        produto.push(p)
+    }
+
+    let maiorBaixa = 0, totalBaixa, posicao
+
+    for (let p of produto) {
+        totalBaixa = 0
+        for (let j = 0; j < p.baixaSem.length; j++) {
+            totalBaixa += p.baixaSem[j]
+        }
+        console.log(p.produto + '-->' + totalBaixa)
+        if (totalBaixa > maiorBaixa) {
+            maiorBaixa = totalBaixa
+            posicao = p
+        }
+    }
+    console.log(posicao)
+
+
+</script>

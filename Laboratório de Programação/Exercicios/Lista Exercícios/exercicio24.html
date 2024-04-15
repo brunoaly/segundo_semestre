@@ -1,0 +1,27 @@
+<meta charset="utf-8">
+<script>
+    let valor = Number(prompt("valor"))
+
+    imprimirQuantidade(valor)
+
+    function imprimirQuantidade(valor) {
+        let n100, n50, n10, n5, n1
+
+		n100 = Math.floor(valor / 100)
+		valor %= 100
+		n50 = Math.floor(valor / 50)
+		valor %= 50
+		n10 = Math.floor(valor / 10)
+		valor %= 10
+		n5 = Math.floor(valor / 5)
+		valor %= 5
+		n1 = Math.floor(valor / 1)
+
+        document.write("<h2>Total de notas de R$ 100,00: " + n100 + "</h2>")
+        document.write("<h2>Total de notas de R$ 50,00: " + n50 + "</h2>")
+        document.write("<h2>Total de notas de R$ 10,00: " + n10 + "</h2>")
+        document.write("<h2>Total de notas de R$ 5,00: " + n5 + "</h2>")
+        document.write("<h2>Total de notas de R$ 1,00: " + n1 + "</h2>")
+    }
+    
+</script>

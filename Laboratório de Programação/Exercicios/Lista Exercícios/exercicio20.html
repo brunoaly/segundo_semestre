@@ -1,0 +1,24 @@
+<meta charset="utf-8">
+<script>
+    let saldoMedio = Number(prompt("Qual o saldo médio no último ano?"))
+    calcularCredito(saldoMedio)    
+
+    function calcularCredito(saldoMedio) {
+        let credito
+        if(saldoMedio <= 200.00) {
+			document.write("<h2>Você não tem direito a crédito </h2>")
+		}
+		else {
+			if(saldoMedio <= 400) {
+				credito = saldoMedio * 20 / 100
+			}
+			else if(saldoMedio <= 600.00) {
+				credito = saldoMedio * 30 / 100
+			}
+			else {
+				credito = saldoMedio * 40 / 100
+			}
+            document.write("<h2>Crédito concedido R$: " + credito + "</h2>")
+        }
+    }  
+</script>

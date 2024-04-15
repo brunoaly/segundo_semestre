@@ -1,0 +1,13 @@
+<meta charset="utf-8">
+
+<script>
+
+    let data = prompt('Insira a data de nascimento: ')
+
+    let meses = ['janeiro', 'fevereiro', 'março', 'abril', 'maio', 'junho', 'julho', 'agosto', 'setembro', 'outubro', 'novembro', 'dezembro']
+
+    data = data.split("/")
+
+    document.write("<h2>Você nasceu em " + data[0] + " de " + meses[data[1] - 1] + " de " + data[2] + "</h2>")
+
+</script>

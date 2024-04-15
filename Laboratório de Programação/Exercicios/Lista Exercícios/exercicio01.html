@@ -1,0 +1,23 @@
+<meta charset="utf-8">
+<script>
+    let inicio = parseFloat(prompt("Temperatura inicial"))
+    let final = parseFloat(prompt("Temperatura final"))
+    let incremento = parseFloat(prompt("Variação da temperatura"))
+    
+    imprimir(inicio, final, incremento)
+
+    function imprimir(inicio, final, incremento) {
+        let aux = ""
+        let tf
+
+        if(inicio < final) {        
+        for(; inicio <= final; inicio += incremento) {
+            tf = inicio * 1.8 +32
+            aux += inicio + "oC --> " + tf + "oF<br>"
+        }
+        document.write("<h2>" + aux + "</h2>")
+    }
+    }
+    
+</script>
+

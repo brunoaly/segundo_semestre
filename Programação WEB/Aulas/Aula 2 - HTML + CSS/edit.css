@@ -1,0 +1,103 @@
+body {
+    font-family: sans-serif;
+    background-image: url(fundo.jpeg);
+}
+
+h1 {
+    font-family: sans-serif;
+    font-style: italic;
+    text-align: center;
+    color: black;
+    background-color: white;
+    padding: 8px;
+    
+}
+
+.t1 {
+    background-color: orange;
+    font-style: normal;
+}
+
+.t2 {
+    background-color: greenyellow;
+    font-style: normal;
+}
+
+.t3 {
+    background-color: blue;
+    color: white;
+    font-style: normal;
+}
+
+.center {
+    text-align: center;
+}
+
+.p1 {
+    font-size: small;
+    text-align: end;
+    color: white;
+    font-weight: bold;
+}
+
+.p2 {
+    font-weight: bold;
+    color: white;
+    font-size: x-large;
+    text-align: center;
+}
+
+.p4 {
+    font-weight: bold;
+    color: white;
+    font-size: x-large;
+    text-align: center;
+}
+
+.p5 {
+    font-weight: bold;
+    color: gray;
+    font-size: x-large;
+    text-align: center;
+}
+
+.p6 {
+    background-image: url(fundo2.jpg);
+}
+
+.p7 {
+    font-weight: bold;
+    color: greenyellow;
+    font-size: x-large;
+    text-align: center;
+}
+
+.p8 {
+    font-weight: bold;
+    color: white;
+    font-size: x-large;
+}
+
+.sp1 {
+    color: red;
+}
+
+.sp2 {
+    color: lightgreen;
+}
+
+.sp3 {
+    color: orange;
+}
+
+.sp4 {
+    color: violet;
+}
+
+.sp5 {
+    color: orange;
+}
+
+.centralizado {
+    text-align: center;
+}

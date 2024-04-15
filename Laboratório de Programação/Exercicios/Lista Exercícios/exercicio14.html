@@ -1,0 +1,19 @@
+<meta charset="utf-8">
+<script>
+    let custoDeFabrica = Number(prompt("Informe o custo de fábrica"))
+    let custoFinal = calcularCusto(custoDeFabrica)
+    document.write("<h2>Custo final ao consumidor R$ " + custoFinal.toFixed(2) + "</h2>")
+    
+    function calcularCusto(custoDeFabrica) {
+        let porcentagemDistribuidor = 0.28
+        let impostos = 0.45
+
+        let custoDistribuidor = custoDeFabrica * porcentagemDistribuidor
+        let taxas = custoDeFabrica * impostos
+
+        let custoFinal = custoDeFabrica + custoDistribuidor + taxas
+
+        return custoFinal
+    }   
+
+</script>

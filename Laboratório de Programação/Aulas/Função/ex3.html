@@ -1,0 +1,24 @@
+<meta charset="utf-8">
+<script>
+
+    let x = Number(prompt('Insira o primeiro valor:'))
+    let y = Number(prompt('Insira o segundo valor:'))
+    let z = Number(prompt('Insira o terceiro valor'))
+
+    console.log('O maior número informado é ' + validarNum(x, y, z))
+
+    function validarNum(x, y, z) {
+        if (x > y && x > z) {
+            return x
+        }
+        else if (y > x && x > z) {
+            return y
+        }
+        else if (z > y && z > x) {
+            return z
+        }
+
+
+    }
+
+</script>

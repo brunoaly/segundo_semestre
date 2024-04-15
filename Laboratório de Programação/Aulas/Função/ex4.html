@@ -1,0 +1,38 @@
+<meta charset="utf-8">
+<script>
+
+    let a = Number(prompt('Insira o valor de a:'))
+
+    if (a == 0) {
+        console.log('Não é uma equação de segundo grau')
+    }
+    else {
+        let b = Number(prompt('Insira o valor de b:'))
+        let c = Number(prompt('Insira o valor de c:'))
+
+        let delta = calcDelta(a, b, c)
+        if (delta < 0) {
+            alert.log('A equação não tem número real.')
+        }
+        else {
+            let raiz = bhaskara(a, b , delta)
+            console.log(raiz)
+        }
+
+    }
+
+    function bhaskara(a, b, delta) {
+        let raiz = new Array (2)
+
+        raiz[0] = (-b + Math.sqrt(delta)) / (2 * a)
+        raiz[1] = (-b - Math.sqrt(delta)) / (2 * a)
+
+        return raiz
+    }
+
+    function calcDelta(a, b, c) {
+        return b * b - 4 * a * c
+    }
+
+
+</script>

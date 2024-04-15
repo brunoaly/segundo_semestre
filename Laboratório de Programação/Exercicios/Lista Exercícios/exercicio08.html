@@ -1,0 +1,116 @@
+<meta charset="utf-8">
+<script>
+    let x = []
+    let media
+    let maiorQueMedia = [], menorQueMedia = []
+
+    // ler 10 valores (você pode altera a quantidade)
+    lerDados(x)
+
+    // imprime os valores antes de realizar as operações
+    document.write("<h1>ANTES de realizar as operações</h1>")
+    imprimir(x)
+
+    // calcula a média dos elementos do vetor e imprime no vídeo
+    media = calcularMedia(x)
+
+    // imrime a média no vídeo
+    document.write("<h3>Média dos elemetos = " + media + "</h3>")
+
+    // separa os elementos do vetor que são menores que a média
+    menorQueMedia = separarMenorMedia(x, media)
+
+    // separa os elementos do vetor que são maiores que a média
+    maiorQueMedia = separarMaiorMedia(x, media)
+
+    // coloca os elementos dos vetores auxiliares em ordem crescente
+    ordemCrescente(menorQueMedia)
+    ordemCrescente(maiorQueMedia)
+
+    // concata os elementos dos arrays auxiliares e atualiza o array x
+    x = concatenar(menorQueMedia, media, maiorQueMedia)
+
+    // imprime os valores depois de realizar as operações
+    document.write("<h1>DEPOIS de realizar as operações</h1>")
+    imprimir(x)
+
+    // função para ler os dados informados pelo usuário
+    function lerDados(x) {
+        for (let i = 0; i < 10; i++) {
+            x[i] = parseInt(prompt("valor"))
+        }
+    }
+
+    // função para imprimir os valores no vídeo
+    function imprimir(x) {
+        for (let i of x) {
+            document.write("<h3>" + i + "</h3>")
+        }
+    }
+
+    // função para calcular e retornar a média dos elementos do vetor
+    function calcularMedia(x) {
+        let total = 0
+        for (let i of x) {
+            total += i
+        }
+        return (total / x.length)
+    }
+
+    // função para separar os elementos do vetor que são menores que a média
+    function separarMenorMedia(x, media) {
+        let menor = []
+        for (let i of x) {
+            if (i < media) {
+                menor.push(i)
+            }
+        }
+        return menor
+    }
+
+    // função para separar os elementos do vetor que são maiores que a média
+    function separarMaiorMedia(x, media) {
+        let maior = []
+        for (let i of x) {
+            if (i > media) {
+                maior.push(i)
+            }
+        }
+        return maior
+    }
+
+    // função para colocar os elementos do vetor em ordem crescente
+    function ordemCrescente(x) {
+        let aux
+        for (let j = 0; j < x.length; j++) {
+            for (let i = 0; i < x.length - 1; i++) {
+                if (x[i] > x[i + 1]) {
+                    aux = x[i]
+                    x[i] = x[i + 1]
+                    x[i + 1] = aux
+                }
+            }
+        }
+    }
+
+    // função para concatenar os dados dos vetores
+    function concatenar(menor, media, maior) {
+        let x = []
+        
+        // copia os valores menores que a média
+        for(let i of menor) {
+            x.push(i)
+        }
+
+        // armazena a média
+        x.push(media)
+
+        // copia os valores maiores que a média
+        for(let i of maior) {
+            x.push(i)
+        }
+
+        // retorna o vetor com todos os valores
+        return x
+    }
+</script>

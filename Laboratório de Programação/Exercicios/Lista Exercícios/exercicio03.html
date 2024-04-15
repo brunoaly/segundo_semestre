@@ -1,0 +1,18 @@
+<meta charset="utf-8">
+<script>
+    let n = parseInt(prompt("informe o valor de n"))
+    let y = calcular(n)
+    document.write("<h2>y = " + y.toFixed(2) + "</h2>")
+
+    function calcular(n) {
+        let numerador = 1
+        let y = 0
+
+        for(; n >= 1; n--) {
+            y += numerador / n
+            numerador++
+        }
+        
+        return y
+    }
+</script>

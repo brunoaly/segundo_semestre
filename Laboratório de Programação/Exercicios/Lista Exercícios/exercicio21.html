@@ -1,0 +1,29 @@
+<meta charset="utf-8">
+<script>
+    let codigoProduto = Number(prompt("Informe o código do produto"))
+    let quantidade = Number(prompt("Informe a quantidade comprada"))
+    
+    document.write("<h2>Preço total: R$ " + calcular(codigoProduto, quantidade) + "</h2>")
+
+    function calcular(codigo, quantidade) {
+        let precoUnitario = 0
+		
+		if(codigo == 1001) {
+			precoUnitario = 5.32
+		}
+		else if(codigo == 1324) {
+			precoUnitario = 6.45
+		}
+		else if(codigo == 6548) {
+			precoUnitario = 2.37
+		}
+		else if(codigo == 987) {
+			precoUnitario = 5.32
+		}
+		else if(codigo == 7623) {
+			precoUnitario = 6.45
+		}
+		
+		return quantidade * precoUnitario
+    }  
+</script>

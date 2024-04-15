@@ -1,0 +1,21 @@
+<meta charset="utf-8">
+<script>
+
+    let n = Number(prompt('Insira o valor de n: '))
+
+    if (n > 0) {
+        divisor(n)
+    }
+    else {
+        alert('O valor deve ser positivo.')
+    }
+
+    function divisor(n) {
+        for(let i = 1; i <= n; i++) {
+            if(n % i == 0) {
+                console.log(i)
+            }
+        }
+    }
+
+</script>

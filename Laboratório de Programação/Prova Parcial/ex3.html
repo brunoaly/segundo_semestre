@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+
+        let x = Number(prompt('Digite o número de linhas da plantação: '))
+        let y = Number(prompt('Digite o número de colunas da plantação: '))
+
+        function preencher(x, y) {
+            let plantacao = [];
+
+            for (let i = 0; i < x; i++) {
+                plantacao[i] = [];
+                for (let j = 0; j < y; j++) {
+                    plantacao[i][j] = Math.round(Math.random())
+                }
+            }
+            return plantacao
+        }
+
+        function imprimir(plantacao) {
+            console.log('Plantação: ');
+            for (let i = 0; i < plantacao.length; i++) {
+                let linha = '';
+                for (let j = 0; j < plantacao[i].length; j++) {
+                    linha += plantacao[i][j] + ' '
+                }
+                console.log(linha)
+            }
+        }
+
+        function falhas(plantacao) {
+            let totalFalhas = 0
+            for (let i = 0; i < plantacao.length; i++) {
+                for (let j = 0; j < plantacao[i].length; j++) {
+                    if (plantacao[i][j] === 0) {
+                        totalFalhas++
+                    }
+                }
+            }
+            return totalFalhas
+        }
+
+        let plantacao = preencher(x, y)
+        imprimir(plantacao)
+
+        let totalFalhas = falhas(plantacao)
+        console.log('Total de falhas no plantio = ' + totalFalhas)
+
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,25 @@
+body {
+    font-family: sans-serif;
+}
+
+h1, h2 {
+    font-weight: bold;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+h1 {
+    font-style: italic;
+    text-align: center;
+    color: white;
+    background-color: black;
+    padding: 8px;
+}
+
+h2 {
+    background-color: lightgray;
+    padding: 8px;
+}
+
+.centralizado {
+    text-align: center;
+}

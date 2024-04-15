@@ -1,0 +1,41 @@
+<meta charset="utf-8">
+<script>
+    let ra = Number(prompt("Qual seu RA?"))
+    let nota1 = Number(prompt("Informe a primeira nota"))
+    let nota2 = Number(prompt("Informe a segunda nota"))
+    let nota3 = Number(prompt("Informe a terceira nota"))
+    let media = Number(prompt("Informe a média dos trabalhos"))
+
+    let aproveitamento = calcularAproveitamento(nota1, nota2, nota3, media)
+    let conceito = calcularConceito(aproveitamento)
+
+    document.write("<h2>Aluno: " + ra + "</h2>")
+    document.write("<h2>Média de aproveitamento: " + aproveitamento + "</h2>")
+    document.write("<h2>Seu conceito: " + conceito + "</h2>")
+
+    function calcularAproveitamento(nota1, nota2, nota3, media) {
+        let aproveitamento
+        aproveitamento = (nota1 + nota2 * 2 + nota3 * 3 + media) / 7
+        return aproveitamento
+    }
+
+    function calcularConceito(aproveitamento) {
+        let conceito = ""
+        if (aproveitamento >= 9 && aproveitamento <= 10) {
+            conceito = "A"
+        }
+        else if (aproveitamento >= 7.5) {
+            conceito = "B"
+        }
+        else if (aproveitamento >= 6.0) {
+            conceito = "C"
+        }
+        else if (aproveitamento >= 4.0) {
+            conceito = "D"
+        }
+        else {
+            conceito = "E"
+        }
+        return conceito
+    }
+</script>

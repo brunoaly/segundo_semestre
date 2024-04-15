@@ -1,0 +1,43 @@
+<script>
+
+    class Retangulo {
+        constructor(altura, base) {
+            this.base = base
+            this.altura = altura
+        }
+
+        calcularArea() {
+            return this.base * this.altura
+        }
+
+        calcularPerimetro() {
+            return (this.base * 2) + (this.altura * 2)
+        }
+    }
+
+    let lista = []
+    let base, altura
+
+    for (i = 0; i < 2; i++) {
+        base = Number(prompt('Insira a base do retângulo: '))
+        altura = Number(prompt('Insira a altura do retângulo: '))
+        lista[i] = new Retangulo (base, altura)
+    }
+
+
+    /*for (let Retangulo of lista) {
+        console.log('Altura:' + Retangulo.altura)
+        console.log('Base:' + Retangulo.base)
+        console.log('Área: ' + Retangulo.calcularArea())
+        console.log('Perímetro: ' + Retangulo.calcularPerimetro())
+        
+    }*/
+
+    lista.forEach(function(valor) {
+        console.log("Altura: " + valor.altura)
+        console.log("Base: " + valor.base)
+        console.log("Area: " + valor.calcularArea())
+        console.log("Perímetro: " + valor.calcularPerimetro())
+    })
+
+</script>

@@ -1,0 +1,27 @@
+<meta charset="utf-8">
+<script>
+    let nota1 = Number(prompt("informe a primeira nota"))
+    let nota2 = Number(prompt("informe a segunda nota"))
+    let nota3 = Number(prompt("informe a terceira nota"))
+
+    let media = calcularMedia(nota1, nota2, nota3)
+    document.write("<h2>média final = " + media + "</h2>")
+    verificarSituacao(media)
+
+    function calcularMedia(nota1, nota2, nota3) {
+        let media
+        media = (nota1 + nota2 + nota3) / 3
+        return media
+    }
+
+    function verificarSituacao(media) {
+        if(media >= 7.0) {
+            document.write("<h2>APROVADO</h2>")
+        }
+        else {
+            document.write("<h2>REPROVADO</h2>")
+        }
+    }
+
+
+</script>

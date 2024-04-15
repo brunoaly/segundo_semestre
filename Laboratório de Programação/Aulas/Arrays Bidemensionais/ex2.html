@@ -1,0 +1,57 @@
+<script>
+
+    let m = new Array(3)
+    let maiorValor
+
+    preencher(m)
+    imprimir(m)
+    maiorValor = buscarMaior(m)
+    console.log("maior valor = " + maiorValor)
+    imprimirLocalizacao(m, maiorValor)
+    //função matriz com valores aleatorios
+
+    function preencher(m) {
+        for(let i = 0; i < m.length; i++) {
+            m[i] = new Array(3)
+            for(let j = 0; j < m[i].length; j++) {
+                m[i][j] = Math.floor(Math.random() * 20)
+            }
+        }
+    }
+
+    //função para imprimir matriz no console
+
+    function imprimir(m) {
+        console.table(m)
+    }
+
+
+    //função para retornar o maior valor
+
+    function buscarMaior(m) {
+        let maiorValor = 0
+        for (let i = 0; i < m.length; i++) {
+            for(let j = 0; j < m[i].length; j++) {
+                if(m[i][j] > maiorValor) {
+                    maiorValor = m[i][j]
+                }
+            }
+        }
+    
+        return maiorValor
+    }
+
+    //função para determinar a posição do maior valor
+
+    function imprimirLocalizacao (m) {
+        for(let i = 0; i < m.length; i ++) {
+            for(let j = 0; j < m[i].length; j++) {
+                if(m[i][j] === maiorValor) {
+                    console.log('linha = ' + i )
+                    console.log()
+                    console.log('coluna = ' + j)
+                }
+            }
+        }
+    }
+</script>

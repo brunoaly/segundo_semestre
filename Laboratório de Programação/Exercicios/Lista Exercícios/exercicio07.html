@@ -1,0 +1,33 @@
+<meta charset="utf-8">
+<script>
+    let valor1 = parseInt(prompt("Primeiro valor"))
+    let valor2 = parseInt(prompt("Segundo valor"))
+    if (valor1 < valor2) {
+        imprimirPrimos(valor1, valor2)
+    }
+    else {
+        alert("O primeiro valor deve ser menor que o segundo")
+    }
+
+
+    function verificarPrimo(num) {
+        if (num < 2) {
+            return false
+        }
+        for (let i = 2; i <= Math.sqrt(num); i++) {
+            if (num % i === 0) {
+                return false
+            }
+        }
+        return true;
+    }
+
+    function imprimirPrimos(a, b) {
+        for (let i = a; i <= b; i++) {
+            if (verificarPrimo(i)) {
+                document.write("<h2>" + i + "</h2>")
+            }
+        }
+    }
+
+</script>

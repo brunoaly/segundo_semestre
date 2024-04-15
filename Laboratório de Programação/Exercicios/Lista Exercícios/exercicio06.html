@@ -1,0 +1,15 @@
+<meta charset="utf-8">
+<script>
+    let numero = Number(prompt("Digite um número inteiro:"))
+    if (ehQuadrado(numero)) {
+        document.write("<h2>" + numero + " é um número quadrado</h2>")
+    } else {
+        document.write("<h2>" + numero + " não é um número quadrado</h2>")
+    }
+
+    function ehQuadrado(numero) {
+        let raizQuadrada = Math.sqrt(numero)
+        return raizQuadrada === Math.floor(raizQuadrada)
+    }
+
+</script>

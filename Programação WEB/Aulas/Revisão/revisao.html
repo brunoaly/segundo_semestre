@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Revisão</title>
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css"
+        integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
+
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct"
+        crossorigin="anonymous"></script>
+</head>
+
+<body>
+
+    <div class="form-group">
+        <label for="nome">Nome</label>
+        <input type="text" id="nome" class="form-control" />
+    </div>
+
+    <div class="form-group">
+        <label for="idade">Idade</label>
+        <input type="number" id="idade" class="form-control" />
+    </div>
+
+    <div class="form-group">
+        <label for="uf">UF</label>
+        <select id="uf" class="form-control">
+            <option value="">Selecione...</option>
+            <option value="1">AC</option>
+            <option value="2">AM</option>
+            <option value="3">AP</option>
+        </select>
+    </div>
+
+    <div>
+        <button type="button" onclick="revisao()" class="btn btn-primary">
+            Teste
+        </button>
+    </div>
+
+    <div id="conteudo"></div>
+
+    <script>
+
+        function revisao() {
+            let input = document.getElementById("nome");
+            let nome = input.value;
+
+            if (nome == "") {
+                alert("Nome vazio!");
+                return;
+            }
+
+            input = document.getElementById("idade");
+            idade = parseInt(input.value);
+
+            if (isNaN(idade) || idade < 0) {
+                alert("Idade inválida!");
+                return;
+            }
+
+            input = document.getElementById("uf");
+            uf = parseInt(input.value);
+
+            if (isNaN(uf)) {
+                alert("UF inválida!");
+                return;
+            }
+
+            let html = `
+				<h1>Informações fornecidas</h1>
+				<p>
+					Nome: ${nome}
+					<button type="button" onclick="remover(this)">
+						Remover
+					</button>
+				</p>
+				<p>
+					Idade: ${idade}
+					<input type="text" />
+				</p>
+				<p>
+					ID da UF: ${uf}
+				</p>
+			`;
+
+            let conteudo = document.getElementById("conteudo");
+
+            // Substitui o conteúdo inteiro por um novo
+            //conteudo.innerHTML = html;
+
+            let div = document.createElement("div");
+            div.innerHTML = html;
+
+            conteudo.appendChild(div);
+        }
+
+        function remover(botao) {
+            let div = botao.parentNode.parentNode;
+            let conteudo = document.getElementById("conteudo");
+            conteudo.removeChild(div);
+        }
+
+    </script>
+</body>
+
+</html>

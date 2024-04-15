@@ -1,0 +1,29 @@
+<meta charset="utf-8">
+<script>
+    let n = parseInt(prompt("Informe um valor inteiro e positivo"))
+    if(n > 0) {
+        if(verificaNumero(n)) {
+            document.write("<h2>" + n + " é formado pela multiplicação de 3 números consecutivos</h2>")
+        }
+        else {
+            document.write("<h2>" + n + " não é formado pela multiplicação de 3 números consecutivos</h2>")
+        }
+    }
+    else {
+        document.write("<h2>O valor informado deve ser positivo</h2>")
+    }
+
+    function verificaNumero(n) {
+        let i = 1;
+        while (i * (i + 1) * (i + 2) <= n) {
+            if (i * (i + 1) * (i + 2) === n) {
+                return true;
+            }
+            i++;
+        }
+        return false;
+    }
+
+    
+
+</script>

@@ -1,0 +1,21 @@
+<meta charset="utf-8">
+<script>
+    let x = Number(prompt("informe o primeiro valor"))
+    let y = Number(prompt("informe o segundo valor"))
+    let z = Number(prompt("informe o terceiro valor"))
+    
+    let maior = acharMaior(x, y, z)
+    
+    document.write("<h2>o maior valor é = " + maior + "</h2>")    
+
+    function acharMaior(x, y, z) {
+        let maior = x
+        if(y > maior) {
+            maior = y
+        }
+        else if(z > maior) {
+            maior = z
+        }
+        return maior
+    }
+</script>

@@ -1,0 +1,16 @@
+<meta charset="utf-8">
+<script>
+    let duracao = Number(prompt("Informe o tempo em segundos"))
+    let tempo = converter(duracao)
+
+    document.write("<h2>Duração: " + tempo[0] + " horas, " + tempo[1] + " minutos, " + tempo[2] + " segundos</h2>")
+    
+    function converter(duracao) {
+        let horas, minutos, segundos, tempo
+        horas = Math.floor(duracao / 3600)
+        minutos = Math.floor((duracao % 3600) / 60)
+        segundos = Math.floor((duracao % 3600) % 60)
+        tempo = [horas, minutos, segundos]
+        return tempo
+    }
+</script>

@@ -1,0 +1,23 @@
+<meta charset="utf-8">
+<script>
+    let ipi = Number(prompt("Informe o valor do IPI"))
+    let codigop1 = Number(prompt("Informe o código da peça 1"))
+    let valorp1 = Number(prompt("Informe o valor unitário da peça 1"))
+    let qtdp1 = Number(prompt("Informe a quantidade da peça 1"))
+
+    let codigop2 = Number(prompt("Informe o código da peça 2"))
+    let valorp2 = Number(prompt("Informe o valor unitário da peça 2"))
+    let qtdp2 = Number(prompt("Informe a quantidade da peça 1"))
+
+    let valorTotal = calcularValorTotal(valorp1, qtdp1, valorp2, qtdp2, ipi)
+
+    document.write("<h2>Valor total: R$ " + valorTotal + "</h2>")
+
+    function calcularValorTotal(valorp1, qtdp1, valorp2, qtdp2, ipi) {
+        let valorTotal	
+		valorTotal = (valorp1 * qtdp1 + valorp2 * qtdp2) * (ipi / 100 + 1)
+		return valorTotal
+    }
+    
+        
+</script>

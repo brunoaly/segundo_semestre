@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 1</title>
+</head>
+
+<style>
+    .dist {
+        margin-top: 2rem;
+    }
+</style>
+
+<body>
+
+    <form id="frm">
+
+        <p>
+            <label for="cpf">CPF:</label>
+            <input type="text" id="cpf" required><br>
+        </p>
+
+        <p>
+            <label for="nome">Nome:</label>
+            <input type="text" id="nome" required><br>
+        </p>
+
+        <p>
+            <label for="peso">Peso (em kg):</label>
+            <input type="number" id="peso" required><br>
+        </p>
+
+        <p>
+            <label for="altura">Altura (em metros):</label>
+            <input type="number" id="altura" required><br>
+        </p>
+
+        <p>
+            <label for="idade">Idade:</label>
+            <input type="number" id="idade" required><br>
+        </p>
+
+        <p>
+            <label for="quadril">Medida do Quadril (em centímetros):</label>
+            <input type="number" id="quadril" required>
+
+            <button type="button" onclick="cadastrarPaciente()">Cadastrar</button>
+        </p>
+
+        <div class="dist">
+            <p>
+                <label for="cpfPesquisa">CPF:</label>
+                <input type="text" id="cpfPesquisa" required>
+
+                <button type="button" onclick="pesquisarPaciente()">Pesquisar</button>
+                <button type="button" onclick="listarPacientes()">Listar Pacientes</button>
+                <button type="button" onclick="removerPaciente()">Remover</button>
+
+            </p>
+        </div>
+
+    </form>
+
+    <pre id="pre"></pre>
+
+    <script src="ex1.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <title>Exercício 1</title>
+</head>
+
+<style>
+    .erro {
+        color: white;
+        background-color: rgb(255, 0, 0);
+        padding: 0.625rem;
+        margin-bottom: 0.625rem;
+        border-radius: 1rem;
+    }
+
+    .container {
+        margin-top: 2rem;
+    }
+</style>
+
+<body>
+
+    <div class="container">
+
+        <div class="mb-3">
+
+            <label for="carta1"> Valor A: </label>
+
+            <input type="number" id="carta1" min="1" max="6" required class="form-control">
+
+        </div>
+
+        <div class="mb-3">
+
+            <label for="carta2"> Valor B: </label>
+
+            <input type="number" id="carta2" min="1" max="6" required class="form-control">
+
+        </div>
+
+        <div class="mb-3">
+
+            <label for="carta3"> Valor C: </label>
+
+            <input type="number" id="carta3" min="1" max="6" required class="form-control">
+
+        </div>
+
+        <div class="mb-3">
+
+            <label for="carta4"> Valor D: </label>
+            <input type="number" id="carta4" min="1" max="6" required class="form-control">
+
+        </div>
+
+        <div class="mb-3">
+
+            <label for="carta5"> Valor E: </label>
+            <input type="number" id="carta5" min="1" max="6" required class="form-control">
+
+        </div>
+
+        <div class="mb-3">
+
+            <button class="btn btn-primary" onclick="cartaFaltante()">Enviar</button>
+
+        </div>
+
+        <div class="" id="resultado"></div>
+
+    </div>
+
+    <script>
+
+        function cartaFaltante() {
+
+            let cartas = []
+            let erro = ''
+            let valoresRepetidos = new Set()
+
+            for (let i = 1; i <= 5; i++) {
+
+                let input = document.getElementById('carta' + i)
+                let valorCarta = Number(input.value)
+
+                if (isNaN(valorCarta) || valorCarta < 1 || valorCarta > 6) {
+                    erro = 'O valor informado é inválido!'
+                    break
+                }
+
+                if (valoresRepetidos.has(valorCarta)) {
+                    erro = 'Os valores informados estão repetidos!'
+                    break
+                }
+
+                valoresRepetidos.add(valorCarta)
+                cartas.push(valorCarta)
+            }
+
+            if (erro) {
+                mostrarErro(erro)
+            } else {
+                let cartaFaltando = valorFaltando(cartas)
+                mostrarFaltante(cartaFaltando)
+            }
+        }
+
+        function valorFaltando(cartas) {
+
+            let somaTotal = 21
+            let somaReal = cartas.reduce((acc, card) => acc + card, 0)
+
+            return somaTotal - somaReal
+        }
+
+        function mostrarFaltante(numeroCarta) {
+
+            let resultadoDiv = document.getElementById('resultado')
+
+            resultadoDiv.innerText = 'A carta faltante é: ' + numeroCarta
+        }
+
+        function mostrarErro(erro) {
+
+            let resultadoDiv = document.getElementById('resultado')
+
+            resultadoDiv.innerText = ''
+
+            let erroDiv = document.createElement('div')
+
+            erroDiv.classList.add('erro')
+
+            erroDiv.innerText = erro
+
+            resultadoDiv.appendChild(erroDiv)
+        }
+
+    </script>
+
+</body>
+
+</html>

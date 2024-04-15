@@ -1,0 +1,19 @@
+<meta charset="utf-8">
+<script>
+    let x = Number(prompt("informe o primeiro valor"))
+    let y = Number(prompt("informe o segundo valor"))
+        
+    if(verificar(x, y)) {
+        document.write("<h2>os valores são múltiplos</h2>")  
+    }
+    else {
+        document.write("<h2>os valores não são múltiplos</h2>")  
+    }      
+
+    function verificar(x, y) {
+        if(x % y == 0 && y % x == 0) {
+            return true
+        }
+        return false
+    }
+</script>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+
+        let sim = []
+        let nao = []
+
+
+        let alunosPequisados = Number(prompt('Insira o número de alunos pesquisados: '))
+
+        for (let i = 0; i < alunosPequisados; i++) {
+            let nome = prompt('Insira o seu nome: ')
+            let escolha = Number(prompt('Digite 1 se for a favor, 2 se for contra: '))
+
+            if (escolha === 1) {
+                sim.push(nome)
+            }
+            else {
+                nao.push(nome)
+            }
+        }
+
+        console.table(sim)
+        console.table(nao)
+
+        for (let i = 0; i < sim.length; i++) {
+            let countSim = 0
+            countSim++
+            console.log(((countSim * 100) / alunosPequisados).toFixed(2) + '%' + ' são a favor.')
+
+            for (let j = 0; j < nao.length; j++) {
+                let countNao = 0
+                countNao++
+                console.log(((countNao * 100) / alunosPequisados).toFixed(2) + '%' + ' são a contra.')
+            }
+        }
+
+
+
+    </script>
+</body>
+
+</html>

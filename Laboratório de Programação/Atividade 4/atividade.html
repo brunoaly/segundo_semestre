@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EU SOU DIAS LOVER</title>
+</head>
+
+<body>
+
+    <h2>Cadastrar Professor</h2>
+
+    <form id="cadastroForm">
+
+        <p>
+            <label for="cpfInput">CPF:</label>
+            <input type="text" id="cpfInput" required>
+        </p>
+
+        <p>
+            <label for="nomeInput">Nome:</label>
+            <input type="text" id="nomeInput" required>
+        </p>
+
+        <p>
+            <label for="salarioInput">Salário:</label>
+            <input type="number" id="salarioInput" step="0.01" required>
+        </p>
+
+        <p>
+            <button type="submit">Cadastrar</button>
+        </p>
+
+    </form>
+
+    <h2>Consultar Professor</h2>
+
+    <form id="consultaForm">
+
+        <label for="cpfConsultaInput">CPF:</label>
+        <input type="text" id="cpfConsultaInput" required>
+
+        <button type="button" id="consultarButton">Consultar</button>
+
+    </form>
+
+    <h2>Lista de Professores</h2>
+
+    <ul id="listaProfessores"></ul>
+
+    <script>
+
+        function cadastrarProfessor(event) {
+            event.preventDefault();
+
+            let cpf = document.getElementById('cpfInput').value
+            let nome = document.getElementById('nomeInput').value
+            let salario = Number(document.getElementById('salarioInput').value).toFixed(2)
+
+            if (localStorage.getItem(cpf)) {
+                alert('Já existe um professor cadastrado com o mesmo CPF.')
+                return
+            }
+
+            let professor = { nome, salario }
+            localStorage.setItem(cpf, JSON.stringify(professor))
+
+            alert('Professor cadastrado com sucesso.')
+
+            event.target.reset()
+
+            listarProfessores()
+        }
+
+        function consultarProfessor() {
+            let cpf = document.getElementById('cpfConsultaInput').value
+            let professor = localStorage.getItem(cpf)
+
+            if (cpf === '') {
+                listarProfessores()
+                return;
+            }
+
+            if (professor) {
+                let { nome, salario } = JSON.parse(professor);
+                let resultado = `Nome: ${nome} Salário: R$ ${salario}`
+
+                document.getElementById('listaProfessores').innerHTML = resultado;
+
+                let buttonExcluir = document.createElement('button');
+                buttonExcluir.innerText = 'Excluir';
+                buttonExcluir.addEventListener('click', () => excluirProfessor(cpf));
+
+                let buttonAtualizar = document.createElement('button');
+                buttonAtualizar.innerText = 'Atualizar Salário';
+                buttonAtualizar.addEventListener('click', () => atualizarSalario(cpf));
+
+                document.getElementById('listaProfessores').appendChild(buttonExcluir);
+                document.getElementById('listaProfessores').appendChild(buttonAtualizar);
+            } else {
+                alert('Professor não encontrado.')
+            }
+        }
+
+        function listarProfessores() {
+            let professores = []
+
+            for (let i = 0; i < localStorage.length; i++) {
+                let cpf = localStorage.key(i)
+                let professor = JSON.parse(localStorage.getItem(cpf))
+                professores.push({ cpf, ...professor })
+            }
+
+            professores.sort((a, b) => a.nome.localeCompare(b.nome))
+
+            let listaHTML = professores
+                .map(professor => `<li>${professor.nome} - Salário: R$ ${professor.salario}</li>`)
+                .join('')
+
+            document.getElementById('listaProfessores').innerHTML = listaHTML
+        }
+
+        function excluirProfessor(cpf) {
+            localStorage.removeItem(cpf)
+            listarProfessores()
+        }
+
+        function atualizarSalario(cpf) {
+            let novoSalario = prompt('Novo salário:')
+            let professor = JSON.parse(localStorage.getItem(cpf))
+
+            if (professor) {
+                professor.salario = parseFloat(novoSalario).toFixed(2)
+                localStorage.setItem(cpf, JSON.stringify(professor))
+
+                alert('Salário atualizado com sucesso.')
+
+                listarProfessores()
+            } else {
+                alert('Professor não encontrado.')
+            }
+        }
+
+        document.getElementById('cadastroForm').addEventListener('submit', cadastrarProfessor)
+        document.getElementById('consultarButton').addEventListener('click', consultarProfessor)
+
+        listarProfessores()
+
+    </script>
+
+</body>
+
+</html>

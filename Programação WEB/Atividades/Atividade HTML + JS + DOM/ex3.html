@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <title>Exercício 3</title>
+</head>
+
+<body>
+
+    <div class="container">
+
+        <p>
+
+            <table id="tabelaPessoas" class="table table-bordered"></table>
+
+        </p>
+
+        <p>
+
+            <button onclick="preencherTabela()" class="btn btn-primary">Preencher Tabela</button>
+
+        </p>
+
+    </div>
+
+    <script>
+
+        function preencherTabela() {
+
+            let pessoas = [
+
+                {
+                    id: 1,
+                    nome: "André",
+                    email: "andre@espm.br",
+                    idade: 36,
+                    cargo: "Professor"
+                },
+
+                {
+                    id: 2,
+                    nome: "Maria",
+                    email: "maria@gmail.com",
+                    idade: 28,
+                    cargo: "Engenheira"
+                },
+
+                {
+                    id: 3,
+                    nome: "João",
+                    email: "joao@yahoo.com",
+                    idade: 42,
+                    cargo: "Advogado"
+                },
+
+                {
+                    id: 4,
+                    nome: "Bruno",
+                    email: "bruno@yahoo.com",
+                    idade: 24,
+                    cargo: "Programador"
+                },
+
+                {
+                    id: 5,
+                    nome: "Carlos Rafael",
+                    email: "crafael@yahoo.com",
+                    idade: 23,
+                    cargo: "Web Dev"
+                },
+
+                {
+                    id: 6,
+                    nome: "Selmini",
+                    email: "selmini@yahoo.com",
+                    idade: 40,
+                    cargo: "Professor"
+                },
+
+                {
+                    id: 7,
+                    nome: "Surjan",
+                    email: "surjan@yahoo.com",
+                    idade: 70,
+                    cargo: "Engenheiro de Software"
+                },
+
+                {
+                    id: 8,
+                    nome: "Vince Vader",
+                    email: "vincevader@yahoo.com",
+                    idade: 45,
+                    cargo: "Game Maker"
+                },
+
+                {
+                    id: 9,
+                    nome: "Renato Mader",
+                    email: "rmader@yahoo.com",
+                    idade: 23,
+                    cargo: "Especialista em UX"
+                },
+
+                {
+                    id: 10,
+                    nome: "Zé Pretin",
+                    email: "zpretin@yahoo.com",
+                    idade: 21,
+                    cargo: "Aluno"
+                },
+            ]
+
+            let tabela = document.getElementById("tabelaPessoas")
+
+            tabela.innerHTML = ""
+
+            let cabecalho = tabela.createTHead()
+
+            let cabecalhoRow = cabecalho.insertRow()
+
+            cabecalhoRow.innerHTML =
+
+                `<th>ID</th>
+
+                <th>Nome</th>
+
+                <th>Email</th>
+
+                <th>Idade</th>
+
+                <th>Cargo</th>`
+
+            let corpo = tabela.createTBody()
+            pessoas.forEach((pessoa) => {
+
+                let row = corpo.insertRow()
+
+                row.innerHTML =
+
+                    `<td>${pessoa.id}</td>
+
+                    <td>${pessoa.nome}</td>
+
+                    <td>${pessoa.email}</td>
+
+                    <td>${pessoa.idade}</td>
+                
+                    <td>${pessoa.cargo}</td>`
+
+            })
+
+        }
+
+    </script>
+
+</body>
+
+</html>

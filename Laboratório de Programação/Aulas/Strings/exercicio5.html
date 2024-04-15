@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="exercicio5.js"></script>
+</head>
+
+<body>
+
+    <h1> Cacluladora de Juros </h1>
+    <label> Data de vencimento: </label>
+    <input type="date" id="dt_vencimento">
+    <br>
+    <label> Valor da conta: R$</label>
+    <input type="number" id="valor_conta">
+    <br>
+    <label>Valor da multa: R$</label>
+    <input type="text" id="valor_multa" readonly>
+    <br>
+    <label>Valor dos juros: R$</label>
+    <input type="text" id="valor_juros" readonly>
+    <br>
+    <label>Valor total: R$</label>
+    <input type="text" id="valor_total" readonly>
+    <br>
+    <button onclick="calcular()">Calcular</button>
+
+</body>
+
+</html>

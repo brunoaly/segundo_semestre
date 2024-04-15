@@ -1,0 +1,47 @@
+<script>
+
+    class Aluno {
+        constructor(ra, nome, nota1, nota2) {
+            this.nome = nome
+            this.ra = ra
+            this.nota1 = nota1
+            this.nota2 = nota2
+        }
+
+        calcularMedia() {
+            return (this.nota1 + this.nota2) / 2
+        }
+
+        situacao() {
+            if (this.calcularMedia() >= 7.0) {
+                return 'Aprovado'
+            }
+            return 'Reprovado'
+        }
+
+    }
+
+    let lista = []
+    let ra, nome, nota1, nota2
+
+    for (i = 0; i < 2; i++) {
+        nome = prompt("Insira seu nome: ")
+        ra = Number(prompt("Insira seu R.A: "))
+        nota1 = Number(prompt("Insira sua primeira nota: "))
+        nota2 = Number(prompt("Insira a sua segunda nota: "))
+        lista[i] = new Aluno(ra, nome, nota1, nota2)
+    }
+
+    for (let aluno of lista) {
+        console.log('Nome: ' + aluno.nome)
+        console.log('RA: ' + aluno.ra)
+        console.log('Média: ' + aluno.calcularMedia())
+        console.log('Situação: ' + aluno.situacao())
+        console.log()
+    }
+
+
+
+
+
+</script>

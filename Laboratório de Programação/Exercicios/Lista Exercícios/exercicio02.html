@@ -1,0 +1,19 @@
+<meta charset="utf-8">
+<script>
+    let x = parseFloat(prompt("valor de x"))
+    let y
+
+    if(x >= -4 && x <= 4) {
+        alert("valor de x inválido")
+    }
+    else {
+        y = calcular(x)
+        document.write("<h2>y = " + y.toFixed(2) + "</h2>")
+    }
+
+    function calcular(x) {
+        let y
+        y = (5 * x + 3)/(Math.sqrt(x * x - 16))
+        return y
+    }
+</script>

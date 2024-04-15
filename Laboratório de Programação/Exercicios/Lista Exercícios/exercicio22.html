@@ -1,0 +1,33 @@
+<meta charset="utf-8">
+<script>
+    let salarioAtual = Number(prompt("Qual o salário atual?"))
+    let codigoCargo = Number(prompt("Qual o código do cargo?"))
+    
+    let novoSalario = calcularNovoSalario(salarioAtual, codigoCargo)
+    imprimirMensagem(salarioAtual, novoSalario)
+
+    function calcularNovoSalario(salarioAtual, codigoCargo) {
+        let porcentagem
+		
+		if(codigoCargo == 101) {
+			porcentagem = 0.1
+		}
+		else if(codigoCargo == 102) {
+			porcentagem = 0.2
+		}
+		else if(codigoCargo == 103) {
+			porcentagem = 0.3
+		}
+		else {
+			porcentagem = 0.4
+		}
+
+		return salarioAtual * (1 + porcentagem)
+    }  
+
+    function imprimirMensagem(salarioAtual, novoSalario) {
+        document.write("<h2>Salário antigo: R$ " + salarioAtual + "</h2>")
+        document.write("<h2>Novo salário: R$ " + novoSalario + "</h2>")
+        document.write("<h2>Diferença salarial: R$ " + (novoSalario - salarioAtual) + "</h2>")
+    }
+</script>

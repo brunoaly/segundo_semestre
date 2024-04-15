@@ -1,0 +1,16 @@
+<meta charset="utf-8">
+<script>
+    let nota1 = Number(prompt("informe a primeira nota"))
+    let nota2 = Number(prompt("informe a segunda nota"))
+    let nota3 = Number(prompt("informe a terceira nota"))
+    
+    let media = calcularMedia(nota1, nota2, nota3)
+
+    document.write("<h2>média final = " + media + "</h2>")
+
+    function calcularMedia(nota1, nota2, nota3) {
+        let media
+		media = (nota1 * 2 + nota2 * 3 + nota3 * 5) / 10
+        return media
+    }
+</script>

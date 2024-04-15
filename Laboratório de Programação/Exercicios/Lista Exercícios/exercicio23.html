@@ -1,0 +1,65 @@
+<meta charset="utf-8">
+<script>
+    let i = Number(prompt("valor de i"))
+    let a = Number(prompt("valor de a"))
+    let b = Number(prompt("valor de b"))
+    let c = Number(prompt("valor de c"))
+    let lista = [a, b, c]
+
+    if (i < 1 || i > 3) {
+        document.write("<h2>Valor de i inválido</h2>")
+    }
+    else {
+        if (i == 1) {
+            ordemCrescente(lista)
+        } else if (i == 2) {
+            ordemDecrescente(lista)
+        } else if (i == 3) {
+            lista = maiorNoMeio(lista)
+        }
+        document.write("<h2>" + lista[0] + ", " + lista[1] + ", " + lista[2] + "</h2>")
+    }
+
+    function ordemCrescente(lista) {
+        let aux
+        for(let j = 0; j < lista.length; j++) {
+            for(let i = 0; i < lista.length - 1; i++) {
+                if(lista[i] > lista[i+1]) {
+                    aux = lista[i]
+                    lista[i] = lista[i+1]
+                    lista[i+1] = aux
+                }
+            }
+        }
+    }
+
+    function ordemDecrescente(lista) {
+        let aux
+        for(let j = 0; j < lista.length; j++) {
+            for(let i = 0; i < lista.length - 1; i++) {
+                if(lista[i] < lista[i+1]) {
+                    aux = lista[i]
+                    lista[i] = lista[i+1]
+                    lista[i+1] = aux
+                }
+            }
+        }
+    }
+
+    function maiorNoMeio(lista) {
+        let a = lista[0]
+        let b = lista[1]
+        let c = lista[2]
+
+        if(a > b && a > c) {
+            lista = [b, a, c]
+        }
+        else if(b > c) {
+            lista = [a, b, c]
+        }
+        else {
+            lista = [a, c, b]
+        }
+        return lista
+    }
+</script>

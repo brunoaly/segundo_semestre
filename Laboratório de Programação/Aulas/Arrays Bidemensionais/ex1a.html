@@ -1,0 +1,21 @@
+<script>
+
+    let diagonalPrincipal = 0, diagonalSecundaria = 0
+
+    let matriz = new Array(4)
+    for (let i = 0; i < matriz.length; i++) {
+        matriz[i] = new Array(4)
+        for (let j = 0; j < matriz[i].length; j++) {
+            matriz[i][j] = Math.floor(Math.random() * 50)
+        }
+    }
+
+    for (let i = 0; i < matriz.length; i ++) {
+            diagonalPrincipal += matriz[i][i]
+        }
+
+    console.table(matriz)   
+    console.table(diagonalPrincipal)
+    
+
+</script>

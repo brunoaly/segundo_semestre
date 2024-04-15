@@ -1,0 +1,24 @@
+<meta charset="utf-8">
+<script>
+    let indice = Number(prompt("Informe o índice de poluição"))
+    
+    document.write("<h2>" + validar(indice) + "</h2>")
+   
+
+    function validar(indice) {
+        let texto = ""
+		if(indice >= 0.05 && indice <= 0.25) {
+			texto = "ÍNDICE ACEITÁVEL"
+		}
+		else if(indice > 0.25 && indice < 0.4) {
+			texto = "PARALIZAR ATIVIDADES DO GRUPO 1"
+		}
+		else if(indice >= 0.4 && indice < 0.5) {
+			texto = "PARALIZAR ATIVIDADES DOS GRUPOS 1 E 2"
+		}
+		else if(indice >= 0.5) {
+			texto = "PARALIZAR ATIVIDADES DOS GRUPOS 1, 2 E 3" 
+		}
+		return texto
+    }    
+</script>

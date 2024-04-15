@@ -1,0 +1,16 @@
+<meta charset="utf-8">
+<script>
+    let n = Number(prompt("Informe o valor de n"))
+    
+    document.write("<h2>y = " + calcular(n).toFixed(2) + "</h2>")   
+
+    function calcular(n) {
+        let y = 0;
+        let fat = 1;
+        for(let i = 1; i <= n; i++) {
+            fat = fat * i;
+            y = y + 1 / fat;
+        }
+        return y
+    }    
+</script>

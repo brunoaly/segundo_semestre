@@ -1,0 +1,16 @@
+<meta charset="utf-8">
+<script>
+    let valor = Number(prompt("informe um valor"))
+
+    document.write("<h2>o valor é: " + verificar1(valor) + " </h2>")
+    document.write("<h2>o valor é: " + verificar2(valor) + " </h2>")
+
+    function verificar1(valor) {
+        return valor % 2 == 0 ? "PAR" : "ÍMPAR"
+    }
+
+    function verificar2(valor) {
+        return valor > 0 ? "POSITIVO" : "NEGATIVO"
+    }
+
+</script>

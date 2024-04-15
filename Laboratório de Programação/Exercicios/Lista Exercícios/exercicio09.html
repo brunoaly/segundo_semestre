@@ -1,0 +1,18 @@
+<meta charset="utf-8">
+<script>
+    let p1x = Number(prompt("coordenada x do ponto 1"))
+    let p1y = Number(prompt("coordenada y do ponto 1"))
+    let p2x = Number(prompt("coordenada x do ponto 2"))
+    let p2y = Number(prompt("coordenada y do ponto 2"))
+
+    let distancia = calcularDistancia(p1x, p1y, p2x, p2y)
+
+    document.write("<h2>Distância entre os pontos = " + distancia.toFixed(2) + "</h2")
+
+    // função para calcular a distância entre os pontos
+    function calcularDistancia(x1, y1, x2, y2) {
+        let distancia
+        distancia = Math.sqrt(Math.pow(x1 - x2, 2) + Math.pow(y1 - y2, 2))
+        return distancia
+    }
+</script>

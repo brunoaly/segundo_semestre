@@ -1,0 +1,31 @@
+<meta charset="utf-8">
+<script>
+    let idade = Number(prompt("informe a idade do nadador"))
+
+    classificar(idade)
+
+    function classificar(idade) {
+        let categoria
+
+        if (idade < 5) {
+            categoria = "SEM CATEGORIA AINDA"
+        }
+        else if (idade <= 7) {
+            categoria = "INFANTIL A"
+        }
+        else if (idade <= 10) {
+            categoria = "INFANTIL B"
+        }
+        else if (idade <= 13) {
+            categoria = "JUVENIL A"
+        }
+        else if (idade <= 17) {
+            categoria = "JUVENIL B"
+        }
+        else {
+            categoria = "adulto"
+        }
+
+        document.write("<h2>Categoria: " + categoria + "</h2>")
+    }
+</script>

@@ -1,0 +1,18 @@
+<meta charset="utf-8">
+<script>
+    let a = Number(prompt("primeiro valor"))
+    let b = Number(prompt("segundo valor"))
+    let c = Number(prompt("terceiro valor"))
+
+    let r = Math.pow(a + b, 2)
+    let s = Math.pow(b + c, 2)
+    
+    let d = calcular(r, s)
+    document.write("<h2>d = " + d.toFixed(2) + "</h2")
+    
+    function calcular(r, s) {
+        let d = (r + s) / 2
+        return d
+    }
+
+</script>

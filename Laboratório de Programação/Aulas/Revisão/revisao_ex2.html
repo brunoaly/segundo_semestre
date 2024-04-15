@@ -1,0 +1,30 @@
+<meta charset="utf-8">
+<script>
+
+    let i = Number(prompt('Insira o valor de i: '))
+    let j = Number(prompt('Insira o valor de j: '))
+    let n, repeticao, maior = 0
+
+    for (; i <= j; i++) {
+        n = i
+        repeticao = 0
+        while (n >= 1) {
+            repeticao++
+            if (n == 1) {
+                break
+            }
+            if (n % 2 == 1) {
+                n = 3 * n + 1
+            }
+            else {
+                n = n / 2
+            }
+        }
+        if (repeticao > maior) {
+            maior = repeticao
+        }
+
+    }
+    console.log(maior)
+
+</script>

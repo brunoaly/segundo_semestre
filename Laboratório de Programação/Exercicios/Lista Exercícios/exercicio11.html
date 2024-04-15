@@ -1,0 +1,15 @@
+<meta charset="utf-8">
+<script>
+    let dias = Number(prompt("informe a idade em dias"))
+    let idade = converter(dias)
+    document.write("<h2>você tem " + idade[0] + " anos, " + idade[1] + " meses e " + idade[2] + " dias</h2>")
+
+    function converter(dias) {
+        let ano, mes, dia, idade
+		ano = Math.floor(dias / 365)
+        mes = Math.floor((dias % 365) / 30)
+        dia = (dias % 365) % 30
+        idade = [ano, mes, dia]
+        return idade
+    }
+</script>

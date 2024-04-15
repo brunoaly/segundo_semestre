@@ -1,0 +1,39 @@
+<meta charset="utf-8">
+<script>
+
+    let x = Number(prompt("Insira o valor do primeiro lado: "))
+    let y = Number(prompt("Insira o valor do segundo lado: "))
+    let z = Number(prompt("Insira o valor do terceiro lado: "))
+
+    if (validar(x, y, z) == true) {
+        classificar(x, y, z)
+    }
+    else {
+        console.log('Os valores dos lados informados não formam um triângulo.')
+    }
+
+    //função para validar se os parâmetros formam um triângulo
+
+    function validar(x, y, z) {
+        if (x < y + z && y < x + z && z < x + y) {
+            return true
+        }
+        return false
+    }
+
+    //função para classificar os triângulos, caso os valores informados formem um
+
+    function classificar(x, y, z) {
+        if (x == y && y == z) {
+            console.log('Os valores informados formam um triângulo equilátero')
+        }
+        else if (x == y && y != z || x == z && z != y || y == z && z != x) {
+            console.log('Os valores informados formam um triângulo isóceles')
+        }
+        else {
+            console.log('Os valores informados formam um triângulo escaleno')
+        }
+    }
+
+
+</script>
